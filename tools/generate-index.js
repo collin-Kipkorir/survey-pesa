@@ -18,7 +18,7 @@ function makeIndex() {
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 
   const title = 'Pesatask';
-  const favicon = '/favicon.ico';
+  const favicon = 'favicon.ico';
 
   const lines = [];
   lines.push('<!doctype html>');
@@ -29,7 +29,7 @@ function makeIndex() {
   lines.push(`<title>${title}</title>`);
   if (cssFiles.length) {
     for (const css of cssFiles) {
-      lines.push(`<link rel="stylesheet" href="/assets/${css}" />`);
+      lines.push(`<link rel="stylesheet" href="assets/${css}" />`);
     }
   }
   lines.push(`<link rel="icon" href="${favicon}" />`);
@@ -39,7 +39,7 @@ function makeIndex() {
 
   // Load scripts
   for (const js of jsFiles) {
-    lines.push(`<script type="module" src="/assets/${js}"></script>`);
+    lines.push(`<script type="module" src="assets/${js}"></script>`);
   }
 
   lines.push('</body>');
